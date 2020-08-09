@@ -1,5 +1,6 @@
 package net.fastnet.dbfastnet.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,22 +10,39 @@ import javax.persistence.Table;
 public class Cliente {
 	//@Column(name = "recetas_nombre")
 	@Id
-	private String IDcliente;
-		
+	@Column (name="IdCliente")
+	private String IdCliente;
+	
+	@Column (name="nombreCliente")
 	private String nombreCliente;
 		
+	@Column (name="numTelefono")
 	private String numTelefono;
 		
+	@Column (name="provincia")
 	private String provincia;
 	
+	@Column (name="tipoConexion")
 	private String tipoConexion;
 	
-	public String getIDcliente() {
-		return IDcliente;
+	public Cliente(String idCliente, String nombreCliente, String numTelefono, String provincia, String tipoConexion) {
+		this.IdCliente = idCliente;
+		this.nombreCliente = nombreCliente;
+		this.numTelefono = numTelefono;
+		this.provincia = provincia;
+		this.tipoConexion = tipoConexion;
+	}
+	
+	public Cliente() {
+	
+	}
+
+	public String getIdCliente() {
+		return IdCliente;
 	}
 		
 	public void setIDreclamo(String IDcliente) {
-		this.IDcliente = IDcliente;
+		this.IdCliente = IDcliente;
 	}
 	
 	public String getNombreCliente() {
