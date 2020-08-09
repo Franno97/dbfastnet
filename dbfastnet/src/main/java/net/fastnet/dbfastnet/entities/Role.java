@@ -1,48 +1,44 @@
 package net.fastnet.dbfastnet.entities;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "role")
 public class Role {
-	
-		@Id
-		@GeneratedValue(strategy = GenerationType.AUTO)
-		@Column(name = "roleId")
-		private int id;
 
-		@Column(name = "roleName")
-		private String role;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
 
-		@Column(name = "roleDesc")
-		private String desc;
+    public Role() {}
 
-		public int getId() {
-			return id;
-		}
+    public Role(String name) {
+        this.name = name;
+    }
 
-		public void setId(int id) {
-			this.id = id;
-		}
+    public Long getId() {
+        return id;
+    }
 
-		public String getRole() {
-			return role;
-		}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-		public void setRole(String role) {
-			this.role = role;
-		}
+    public String getName() {
+        return name;
+    }
 
-		public String getDesc() {
-			return desc;
-		}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-		public void setDesc(String desc) {
-			this.desc = desc;
-		}
+    @Override
+    public String toString() {
+        return "Role{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            '}';
+    }
 }
