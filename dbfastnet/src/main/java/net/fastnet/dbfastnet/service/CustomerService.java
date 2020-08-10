@@ -17,26 +17,28 @@ public class CustomerService implements ICustomerService{
 	private ICustomer data;
 	
 	@Override
-	public List<Customer> listar() {
+	public List<Customer> list() {
 		return (List<Customer>)data.findAll();
 	}
 
 	@Override
-	public Optional<Customer> listarId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Customer> listId(int id) {
+		return data.findById(id);
 	}
 
 	@Override
 	public int save(Customer c) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res=0;
+		Customer customer=data.save(c);
+		if(!customer.equals(null)) {
+			res = 1;
+		}
+		return res;
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		data.deleteById(id);
 	}
 
 }

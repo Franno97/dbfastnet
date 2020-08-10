@@ -17,7 +17,6 @@ public class Claim{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String IdCustomer;
     private String IdBreakdown;
     private String requestChannel;

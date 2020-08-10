@@ -6,8 +6,8 @@ import java.util.Optional;
 import net.fastnet.dbfastnet.entities.Customer;
 
 public interface ICustomerService {
-	public List<Customer>listar();
-	public Optional<Customer>listarId(int id);
+	public List<Customer>list();
+	public Optional<Customer>listId(int id);
 	public int save(Customer c);
 	public void delete(int id);
 }
