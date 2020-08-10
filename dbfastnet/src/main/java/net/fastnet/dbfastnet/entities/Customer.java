@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
+@Table (name = "Customer")
 public class Customer{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String IdCustomer;
     private String name;
@@ -21,20 +24,19 @@ public class Customer{
    	public Customer() {
 	}
 
-	public Customer(Long id, String iDcustomer, String name, String phone, String province, String connectionType) {
-		this.id = id;
-		this.IdCustomer = iDcustomer;
+	public Customer(String IdCustomer, String name, String phone, String province, String connectionType) {
+		this.IdCustomer = IdCustomer;
 		this.name = name;
 		this.phone = phone;
 		this.province = province;
 		this.connectionType = connectionType;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -43,8 +45,8 @@ public class Customer{
 		return IdCustomer;
 	}
 
-	public void setIdCustomer(String IDcustomer) {
-		this.IdCustomer = IDcustomer;
+	public void setIdCustomer(String IdCustomer) {
+		this.IdCustomer = IdCustomer;
 	}
 
 	public String getName() {

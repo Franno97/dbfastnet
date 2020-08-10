@@ -4,13 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table (name = "Breakdown")
 public class Breakdown {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String IdBreakdown;
     private String description;
@@ -18,26 +20,25 @@ public class Breakdown {
     public Breakdown() {
 	}
 
-    public Breakdown(Long id, String IdBreakdown, String description) {
-		this.id = id;
+    public Breakdown(String IdBreakdown, String description) {
 		this.IdBreakdown = IdBreakdown;
 		this.description = description;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getIDbreakdown() {
+	public String getIdBreakdown() {
 		return IdBreakdown;
 	}
 
-	public void setIDbreakdow(String IDbreakdown) {
-		this.IdBreakdown = IDbreakdown;
+	public void setIdBreakdow(String IdBreakdown) {
+		this.IdBreakdown = IdBreakdown;
 	}
 
 	public String getDescription() {

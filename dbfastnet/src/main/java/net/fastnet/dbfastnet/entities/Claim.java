@@ -7,13 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
+@Table (name = "Claim")
 public class Claim{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String IdCustomer;
     private String IdBreakdown;
@@ -26,11 +29,10 @@ public class Claim{
 	public Claim() {
 	}
 
-	public Claim(Long id, String idCustomer, String idBreakdown, String requestChannel,
+	public Claim(String IdCustomer, String IdBreakdown, String requestChannel,
 			Date dateTimeReport, Date dateTimeRepair, Time repairTime, String solutionDesc) {
-		this.id = id;
-		this.IdCustomer = idCustomer;
-		this.IdBreakdown = idBreakdown;
+		this.IdCustomer = IdCustomer;
+		this.IdBreakdown = IdBreakdown;
 		this.requestChannel = requestChannel;
 		this.dateTimeReport = dateTimeReport;
 		this.dateTimeRepair = dateTimeRepair;
@@ -38,11 +40,11 @@ public class Claim{
 		this.solutionDesc = solutionDesc;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -50,16 +52,16 @@ public class Claim{
 		return IdCustomer;
 	}
 
-	public void setIdCustomer(String idCustomer) {
-		IdCustomer = idCustomer;
+	public void setIdCustomer(String IdCustomer) {
+		this.IdCustomer = IdCustomer;
 	}
 
 	public String getIdBreakdown() {
 		return IdBreakdown;
 	}
 
-	public void setIdBreakdown(String idBreakdown) {
-		IdBreakdown = idBreakdown;
+	public void setIdBreakdown(String IdBreakdown) {
+		this.IdBreakdown = IdBreakdown;
 	}
 
 	public String getRequestChannel() {
