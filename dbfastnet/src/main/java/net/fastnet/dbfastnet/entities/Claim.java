@@ -1,5 +1,8 @@
 package net.fastnet.dbfastnet.entities;
 
+import java.sql.Date;
+import java.sql.Time;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,20 +15,22 @@ public class Claim{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String IdReclamo;
+    private String IdCustomer;
+    private String IdBreakdown;
     private String requestChannel;
-    private String dateTimeReport;
-    private String dateTimeRepair;
-    private String repairTime;
+    private Date dateTimeReport;
+    private Date dateTimeRepair;
+    private Time repairTime;
     private String solutionDesc;
     
 	public Claim() {
 	}
 
-	public Claim(Long id, String iDreclamo, String requestChannel, String dateTimeReport, String dateTimeRepair,
-			String repairTime, String solutionDesc) {
+	public Claim(Long id, String idCustomer, String idBreakdown, String requestChannel,
+			Date dateTimeReport, Date dateTimeRepair, Time repairTime, String solutionDesc) {
 		this.id = id;
-		IdReclamo = iDreclamo;
+		this.IdCustomer = idCustomer;
+		this.IdBreakdown = idBreakdown;
 		this.requestChannel = requestChannel;
 		this.dateTimeReport = dateTimeReport;
 		this.dateTimeRepair = dateTimeRepair;
@@ -41,12 +46,20 @@ public class Claim{
 		this.id = id;
 	}
 
-	public String getIDreclamo() {
-		return IdReclamo;
+	public String getIdCustomer() {
+		return IdCustomer;
 	}
 
-	public void setIDreclamo(String iDreclamo) {
-		IdReclamo = iDreclamo;
+	public void setIdCustomer(String idCustomer) {
+		IdCustomer = idCustomer;
+	}
+
+	public String getIdBreakdown() {
+		return IdBreakdown;
+	}
+
+	public void setIdBreakdown(String idBreakdown) {
+		IdBreakdown = idBreakdown;
 	}
 
 	public String getRequestChannel() {
@@ -57,27 +70,27 @@ public class Claim{
 		this.requestChannel = requestChannel;
 	}
 
-	public String getDateTimeReport() {
+	public Date getDateTimeReport() {
 		return dateTimeReport;
 	}
 
-	public void setDateTimeReport(String dateTimeReport) {
+	public void setDateTimeReport(Date dateTimeReport) {
 		this.dateTimeReport = dateTimeReport;
 	}
 
-	public String getDateTimeRepair() {
+	public Date getDateTimeRepair() {
 		return dateTimeRepair;
 	}
 
-	public void setDateTimeRepair(String dateTimeRepair) {
+	public void setDateTimeRepair(Date dateTimeRepair) {
 		this.dateTimeRepair = dateTimeRepair;
 	}
 
-	public String getRepairTime() {
+	public Time getRepairTime() {
 		return repairTime;
 	}
 
-	public void setRepairTime(String repairTime) {
+	public void setRepairTime(Time repairTime) {
 		this.repairTime = repairTime;
 	}
 
@@ -88,12 +101,14 @@ public class Claim{
 	public void setSolutionDesc(String solutionDesc) {
 		this.solutionDesc = solutionDesc;
 	}
+	
 
 	@Override
 	    public String toString() {
-	        return "Breakdown{" +
+	        return "Claim{" +
 	            "id=" + id +
-	            ", IdReclamo='" + IdReclamo + 
+	            ", IdCustomer='" + IdCustomer +
+	            ", IdBreakdown='" + IdBreakdown +
 	            ", requestChannel='" + requestChannel + 
 	            ", dateTimeReport='" + dateTimeReport + 
 	            ", dateTimeRepair='" + dateTimeRepair + 

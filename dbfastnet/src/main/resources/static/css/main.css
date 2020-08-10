@@ -1,0 +1,134 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {font-size: 66px; font-weight: 800; line-height: 90px; }
+h2 { font-size: 48px; margin-bottom: 30px;}
+
+p {
+    font-size: 18px;
+    color: #999999;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+section {
+    padding: 120px 0px;
+}
+
+.topmargin-xs { margin-top: 15px;}
+.topmargin-sm { margin-top: 30px;}
+.topmargin-lg { margin-top: 60px;}
+.topmargin-xlg {margin-top: 120px; }
+
+.botmargin-xs { margin-bottom: 15px;}
+.botmargin-sm { margin-bottom: 30px;}
+.botmargin-lg { margin-bottom: 60px;}
+.botmargin-xlg {margin-bottom: 120px; }
+
+.btn {
+    font-size: 14px;
+    padding: 15px 26px;
+    min-width: 160px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: 4px solid #ffffff;
+}
+
+.btn ion-icon {font-size: 14px; margin-right: 5px;}
+
+.main-section {
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+}
+
+.user-img img {
+    height: 100px;
+    width: 100px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.form-input button {
+    width: 40%;
+    margin: 5px 0 25px;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    opacity: 0.8;
+    padding: 0 18px;
+    border-radius: 10px;
+}
+
+.navbar {
+    background-color: transparent;
+    opacity: 0.8;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+    min-height: 80px;
+}
+
+.nav-link { color: #ffff; font-size: 20px;}
+.nav-link:hover { color: #1a1a1a; }
+
+.logo-brand {
+    min-width: 120px;
+    max-width: 150px;
+}
+
+.navbar-toggler { font-size: 40px;}
+.navbar-toggler:focus { outline: none;}
+
+#hero {
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    padding-bottom: 0px;
+    min-height: 760px;
+    color: #ffffff;
+}
+
+#hero p {
+    color: #ffffff;
+}
+
+#Aboutus {
+    background-image: url('/images/hero1.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    padding-bottom: 0px;
+    min-height: 760px;
+    color: #ffffff;
+}
+#Aboutus p {
+    color: #ffffff;
+}
+
+.content-center {
+    max-width: 800px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+@media (max-width: 575.98px) { 
+    h1 {
+        font-size: 40px; line-height: normal;
+    }
+ }

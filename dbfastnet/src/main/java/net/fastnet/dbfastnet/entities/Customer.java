@@ -39,11 +39,11 @@ public class Customer{
 	}
 
 	
-	public String getIDcustomer() {
+	public String getIdCustomer() {
 		return IdCustomer;
 	}
 
-	public void setIDcustomer(String IDcustomer) {
+	public void setIdCustomer(String IDcustomer) {
 		this.IdCustomer = IDcustomer;
 	}
 
@@ -81,9 +81,9 @@ public class Customer{
 
 	@Override
 	    public String toString() {
-	        return "Breakdown{" +
+	        return "Customer{" +
 	            "id=" + id +
-	            ", IdCustomer='" + IdCustomer + 
+	            ", IdCustomer='" + IdCustomer +
 	            ", name='" + name + 
 	            ", phone='" + phone + 
 	            ", province='" + province + 
