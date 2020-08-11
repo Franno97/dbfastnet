@@ -20,16 +20,16 @@ public class Claim{
     private String idcustomer;
     private String idbreakdown;
     private String requestchannel;
-    private Date datetimereport;
-    private Date datetimerepair;
-    private Time repairtime;
+    private String datetimereport;
+    private String datetimerepair;
+    private String repairtime;
     private String solutiondesc;
     
 	public Claim() {
 	}
 
 	public Claim(String idcustomer, String idbreakdown, String requestchannel,
-			Date datetimereport, Date datetimerepair, Time repairtime, String solutiondesc) {
+			String datetimereport, String datetimerepair, String repairtime, String solutiondesc) {
 		this.idcustomer = idcustomer;
 		this.idbreakdown = idbreakdown;
 		this.requestchannel = requestchannel;
@@ -71,27 +71,27 @@ public class Claim{
 		this.requestchannel = requestchannel;
 	}
 
-	public Date getDatetimereport() {
+	public String getDatetimereport() {
 		return datetimereport;
 	}
 
-	public void setDatetimereport(Date datetimereport) {
+	public void setDatetimereport(String datetimereport) {
 		this.datetimereport = datetimereport;
 	}
 
-	public Date getDatetimerepair() {
+	public String getDatetimerepair() {
 		return datetimerepair;
 	}
 
-	public void setDatetimerepair(Date datetimerepair) {
+	public void setDatetimerepair(String datetimerepair) {
 		this.datetimerepair = datetimerepair;
 	}
 
-	public Time getRepairtime() {
+	public String getRepairtime() {
 		return repairtime;
 	}
 
-	public void setRepairtime(Time repairtime) {
+	public void setRepairtime(String repairtime) {
 		this.repairtime = repairtime;
 	}
 
