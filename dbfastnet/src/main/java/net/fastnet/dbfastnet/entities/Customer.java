@@ -15,21 +15,21 @@ public class Customer{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String IdCustomer;
+    private String idcustomer;
     private String name;
     private String phone;
     private String province;
-    private String connectionType;
+    private String connectiontype;
     
    	public Customer() {
 	}
 
-	public Customer(String IdCustomer, String name, String phone, String province, String connectionType) {
-		this.IdCustomer = IdCustomer;
+	public Customer(String idcustomer, String name, String phone, String province, String connectiontype) {
+		this.idcustomer = idcustomer;
 		this.name = name;
 		this.phone = phone;
 		this.province = province;
-		this.connectionType = connectionType;
+		this.connectiontype = connectiontype;
 	}
 
 	public int getId() {
@@ -41,12 +41,12 @@ public class Customer{
 	}
 
 	
-	public String getIdCustomer() {
-		return IdCustomer;
+	public String getIdcustomer() {
+		return idcustomer;
 	}
 
-	public void setIdCustomer(String IdCustomer) {
-		this.IdCustomer = IdCustomer;
+	public void setIdcustomer(String idcustomer) {
+		this.idcustomer = idcustomer;
 	}
 
 	public String getName() {
@@ -73,23 +73,23 @@ public class Customer{
 		this.province = province;
 	}
 
-	public String getConnectionType() {
-		return connectionType;
+	public String getConnectiontype() {
+		return connectiontype;
 	}
 
-	public void setConnectionType(String connectionType) {
-		this.connectionType = connectionType;
+	public void setConnectiontype(String connectiontype) {
+		this.connectiontype = connectiontype;
 	}
 
 	@Override
 	    public String toString() {
 	        return "Customer{" +
 	            "id=" + id +
-	            ", IdCustomer='" + IdCustomer +
+	            ", idcustomer='" + idcustomer +
 	            ", name='" + name + 
 	            ", phone='" + phone + 
 	            ", province='" + province + 
-	            ", connectionType='" + connectionType + '\'' +
+	            ", connectiontype='" + connectiontype + '\'' +
 	            '}';
 	    }
 }

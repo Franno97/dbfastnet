@@ -10,8 +10,8 @@ Swal.fire({
 }).then((result) => {
   if (result.value) {
   		$.ajax({
-  			url:"/deleteCustomer/"+id,
-  			success: funtion(res) {
+  			url:"/deleteclaim/"+id,
+  			success: function(res) {
   				console.log(res);
   			}
   		});
@@ -21,7 +21,7 @@ Swal.fire({
       'success'
     ).then((ok)=>{
     	if(ok){
-    		location.href="/listCustomer";
+    		location.href="/listclaim";
     	}
     });
   }

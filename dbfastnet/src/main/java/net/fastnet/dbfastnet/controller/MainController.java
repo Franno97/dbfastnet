@@ -34,9 +34,15 @@ public class MainController {
 	private IClaimService serviceClaim;
 	
 	@GetMapping("/")
-    public String root() {
-        return "index";
+    public String root(Model model) {
+		List<Customer>customers = serviceCustomer.list();
+    	model.addAttribute("customers", customers);
+    	return "index";
     }
+	//@GetMapping("/")
+    //public String root() {
+    //    return "index";
+    //}
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -48,98 +54,98 @@ public class MainController {
         return "user/index";
     }
     
-    @GetMapping("/listCustomers")
-    public String listCustomer(Model model) {
-    	List<Customer>customers = serviceCustomer.list();
-    	model.addAttribute("customers", customers);
-    	return "listCustomer";
-    }
+    //@GetMapping("/listCustomers")
+    //public String listCustomer(Model model) {
+    //	List<Customer>customers = serviceCustomer.list();
+    //	model.addAttribute("customers", customers);
+    //	return "listCustomer";
+    //}
     
-    @GetMapping("/listBreakdowns")
+    @GetMapping("/listbreakdowns")
     public String listBreakdown(Model model) {
     	List<Breakdown>breakdowns = serviceBreakdown.list();
     	model.addAttribute("breakdowns", breakdowns);
-    	return "listBreakdown";
+    	return "listbreakdown";
     }
     
-    @GetMapping("/listClaims")
+    @GetMapping("/listclaims")
     public String listClaim(Model model) {
     	List<Claim>claims = serviceClaim.list();
     	model.addAttribute("claims", claims);
-    	return "listClaim";
+    	return "listclaim";
     }
     
-    @GetMapping("/newCustomer")
+    @GetMapping("/newcustomer")
     public String addCustomer(Model model) {
     	model.addAttribute("customer", new Customer());
-    	return "formCustomer";
+    	return "formcustomer";
     }
     
-    @GetMapping("/newBreakdown")
+    @GetMapping("/newbreakdown")
     public String addBreakdown(Model model) {
     	model.addAttribute("breakdown", new Breakdown());
-    	return "formBreakdown";
+    	return "formbreakdown";
     }
-    @GetMapping("/newClaim")
+    @GetMapping("/newclaim")
     public String addClaim(Model model) {
     	model.addAttribute("claim", new Claim());
-    	return "formClaim";
+    	return "formclaim";
     }
     
-    @PostMapping("/saveCustomer")
+    @PostMapping("/savecustomer")
     public String saveCustomer(@Valid Customer c, Model model) {
     	serviceCustomer.save(c);
-    	return "redirect:/listCustomers";
+    	return "redirect:/listcustomers";
     }
     
-    @PostMapping("/saveBreakdown")
+    @PostMapping("/savebreakdown")
     public String saveBreakdown(@Valid Breakdown c, Model model) {
     	serviceBreakdown.save(c);
-    	return "redirect:/listBreakdowns";
+    	return "redirect:/listbreakdowns";
     }
     
-    @PostMapping("/saveClaim")
+    @PostMapping("/saveclaim")
     public String saveClaim(@Valid Claim c, Model model) {
     	serviceClaim.save(c);
-    	return "redirect:/listClaims";
+    	return "redirect:/listclaims";
     }
     
-    @GetMapping("/editCustomer/{id}")
+    @GetMapping("/editcustomer/{id}")
     public String editCustomer(@PathVariable int id, Model model) {
     	Optional<Customer>customer = serviceCustomer.listId(id);
     	model.addAttribute("customer", customer);
-    	return "formCustomer";
+    	return "formcustomer";
     }
     
-    @GetMapping("/editBreakdown/{id}")
+    @GetMapping("/editbreakdown/{id}")
     public String editBreakdown(@PathVariable int id, Model model) {
     	Optional<Breakdown>breakdown = serviceBreakdown.listId(id);
     	model.addAttribute("breakdown", breakdown);
-    	return "formBreakdown";
+    	return "formbreakdown";
     }
     
-    @GetMapping("/editClaim/{id}")
+    @GetMapping("/editclaim/{id}")
     public String editClaim(@PathVariable int id, Model model) {
     	Optional<Claim>claim = serviceClaim.listId(id);
     	model.addAttribute("claim", claim);
-    	return "formClaim";
+    	return "formclaim";
     }
     
-    @GetMapping("/deleteCustomer/{id}")
+    @GetMapping("/deletecustomer/{id}")
     public String deleteCustomer(Model model, @PathVariable int id) {
     	serviceCustomer.delete(id);
-    	return "redirect:/listCustomer";
+    	return "redirect:/listcustomer";
     }
     
-    @GetMapping("/deleteBreakdown/{id}")
+    @GetMapping("/deletebreakdown/{id}")
     public String deleteBreakdown(Model model, @PathVariable int id) {
     	serviceBreakdown.delete(id);
-    	return "redirect:/listBreakdown";
+    	return "redirect:/listbreakdown";
     }
     
-    @GetMapping("/deleteClaim/{id}")
+    @GetMapping("/deleteclaim/{id}")
     public String deleteClaim(Model model, @PathVariable int id) {
     	serviceClaim.delete(id);
-    	return "redirect:/listClaim";
+    	return "redirect:/listclaim";
     }
 }
