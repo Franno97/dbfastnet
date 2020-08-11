@@ -53,8 +53,8 @@ public class Breakdown {
 	    public String toString() {
 	        return "Breakdown{" +
 	            "id=" + id +
-	            ", idbreakdown='" + idbreakdown + 
-	            ", description='" + description + '\'' +
+	             ", description='" + description +
+	            ", idbreakdown='" + idbreakdown + '\'' +
 	            '}';
 	    }
 }

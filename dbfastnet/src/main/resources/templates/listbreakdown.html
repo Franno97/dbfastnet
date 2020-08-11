@@ -58,13 +58,13 @@
         				<thead>
         					<tr>
 	    						<th>Id</th>
-	        					<th>Id Breakdown</th>
+	        					<!--  <th type="hidden">Id Breakdown</th> -->
 	        					<th>Description</th>
         					</tr>
         				</thead>
         					<tr th:each="breakdown:${breakdowns}">
 	        				<td th:text="${breakdown.id}"></td>
-	        				<td th:text="${breakdown.idbreakdown}"></td>
+	        				<!--  <td th:text="${breakdown.idbreakdown}"></td> -->
 	        				<td th:text="${breakdown.description}"></td>
 	        				<td>
         						<a th:href="@{/editbreakdown/}+${breakdown.id}" class="btn btn-warning">Edit</a>
@@ -98,7 +98,7 @@
   
   	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-	<script src="funcionesCustomer.js"></script>
+	<script src="funcionesBreakdown.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
