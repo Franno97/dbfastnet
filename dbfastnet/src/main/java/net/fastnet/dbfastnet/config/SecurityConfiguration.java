@@ -14,7 +14,7 @@ import net.fastnet.dbfastnet.service.UserService;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+//comentarios para el commit
     @Autowired
     private UserService userService;
 
