@@ -21,7 +21,7 @@ Swal.fire({
       'success'
     ).then((ok)=>{
     	if(ok){
-    		location.href="/index";
+    		location.href="/listcustomer";
     	}
     });
   }

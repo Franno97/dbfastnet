@@ -16,6 +16,12 @@ p {
     margin-bottom: 0;
 }
 
+form-group {
+	margin-bottom: 15px;
+}
+
+.bgDark { background-color: #111111 }
+
 a:hover {
     text-decoration: none;
 }
@@ -40,7 +46,10 @@ section {
     min-width: 160px;
     border-radius: 2px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-light {
@@ -49,31 +58,38 @@ section {
     border: 4px solid #ffffff;
 }
 
+.btn-register {
+    background-color: #ffffff;
+    color: #3380f3;
+    border: 4px solid #ffffff;
+}
+
+
 .btn ion-icon {font-size: 14px; margin-right: 5px;}
 
 .main-section {
-    margin: 0 auto;
-    margin-top: 130px;
-    padding: 0;
+	margin: 0 auto;
+	margin-top: auto;
+	padding: 0;
 }
 
 .user-img img {
-    height: 100px;
+	height: 100px;
     width: 100px;
     margin-top: 35px;
     margin-bottom: 40px;
 }
 
 .form-input button {
-    width: 40%;
-    margin: 5px 0 25px;
+	width: 40%;
+	margin: 5px 0 25px;
 }
 
 .modal-content {
-    background-color: #ffffff;
-    opacity: 0.8;
-    padding: 0 18px;
-    border-radius: 10px;
+	background-color: #ffffff;
+	opacity: 0.8;
+	padding: 20px 18px;
+	border-radius: 10px;
 }
 
 .navbar {
@@ -96,7 +112,7 @@ section {
 
 #hero {
     background-image: url('/images/hero.jpg');
-    background-size: cover;
+    background-size: auto;
     padding-top: 90px;
     padding-bottom: 0px;
     min-height: 760px;
@@ -106,6 +122,7 @@ section {
 #hero p {
     color: #ffffff;
 }
+
 
 #Aboutus {
     background-image: url('/images/hero1.jpg');
@@ -119,16 +136,83 @@ section {
     color: #ffffff;
 }
 
+.form-group {
+    margin-bottom: 0;
+}
+
 .content-center {
     max-width: 800px;
-    margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
+
 
 @media (max-width: 575.98px) { 
     h1 {
         font-size: 40px; line-height: normal;
     }
  }
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+*******************************************************FOOTER**************************************************
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+footer {
+    padding: 80px 0;
+    text-align: center;
+    color: var(--white-color);
+}
+
+footer a {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.foot-icon {
+    font-size: 14px; 
+    margin-right: 5px;
+    color: #ffffff
+}
+
+footer a:hover {
+    color: var(--white-color);
+}
+
+footer .list-inline .list-inline-item {
+    padding: 10px 15px;
+}
+.footer-text {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////
+************************************************ REGISTRATION PAGE***************************
+//////////////////////////////////////////////////////////////////////////////////////////*/
+
+.titlesize-regist {font-size: 40px;}
+.textsize-regist { font-size: 18px;}
+.margin-regist {margin-left= auto; margin-right= auto}
+.check-margin { margin-left= 7px;}
+.textsize-term { font-size: 15px;}
+.textcolor{ color: #111111; opacity: 0.8}
+
+#hero2 {
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    padding-top: 90px;
+    padding-bottom: 0px;
+    min-height: 760px;
+    color: #ffffff;
+}
+
+#hero2 p {
+    color: #ffffff;
+}
+
+
+

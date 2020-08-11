@@ -1,94 +1,122 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+ 
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 
-    <title>Registration</title>
+  <link href="/css/main.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+  <!--Fuentes-->
+
+
+  <link rel="shortcut icon" href="/images/icon.svg">
+    <title>Data Trouble | Registration</title>
 </head>
 
+ 
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-     <span class="sr-only">Toggle navigation</span> <span
-      class="icon-bar"></span> <span class="icon-bar"></span> <span
-      class="icon-bar"></span>
-    </button>
-                <a class="navbar-brand" href="#" th:href="@{/}">Registration and
-     Login Module</a>
-            </div>
-        </div>
-    </nav>
-
-    <br>
-    <br>
-
+    <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+      <a class="navbar-brand" href="@{/}"><img src="/images/logo1.png" class="logo-brand" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
 
-                <div th:if="${param.success}">
-                    <div class="alert alert-info">You've successfully registered to our awesome app!</div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/login}" id="home">Inicio Sesión</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+<section id="hero2">
+    <div class="container">
+      <div class="content-center">
+          <div class="col-sm main-section">
+            <div class="modal-content">
+			  
+			  <div th:if="${param.success}">
+                    <div class="alert alert-info">¡Se ha Registrado Con Éxito!</div>
                 </div>
 
-                <h1>Registration</h1>
+                <h1 class="titlesize-regist textcolor">Registrarse</h1>
                 <form th:action="@{/registration}" th:object="${user}" method="post">
 
-                    <p class="error-message" th:if="${#fields.hasGlobalErrors()}" th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation error
-                    </p>
-
                     <div class="form-group" th:classappend="${#fields.hasErrors('firstName')}? 'has-error':''">
-                        <label for="firstName" class="control-label">First name</label> <input id="firstName" class="form-control" th:field="*{firstName}" />
-                        <p class="error-message" th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>
+                        <label for="firstName"></label> <input id="firstName" class="form-control" autofocus="autofocus" th:field="*{firstName}" placeholder="Nombre" />
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('lastName')}? 'has-error':''">
-                        <label for="lastName" class="control-label">Last name</label> <input id="lastName" class="form-control" th:field="*{lastName}" />
-                        <p class="error-message" th:each="error : ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>
+                        <label for="lastName" class="control-label textsize-regist"></label> <input id="lastName" class="form-control" th:field="*{lastName}" placeholder="Apellido" />
+                        <div class="alert alert-danger" th:each="error : ${#fields.errors('lastName')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
-                        <label for="email" class="control-label">E-mail</label> <input id="email" class="form-control" th:field="*{email}" />
-                        <p class="error-message" th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation error
-                        </p>
+                        <label for="email" class="control-label textsize-regist"></label> <input id="email" class="form-control" th:field="*{email}" placeholder="E-mail"/>
+                        <div class="alert alert-danger" th:each="error : ${#fields.errors('email')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
-                        <label for="confirmEmail" class="control-label">Confirm
-       e-mail</label> <input id="confirmEmail" class="form-control" th:field="*{confirmEmail}" />
-                        <p class="error-message" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">Validation error</p>
+                        <label for="confirmEmail" class="control-label textsize-regist">
+                        </label> <input id="confirmEmail" class="form-control" th:field="*{confirmEmail}" placeholder="Confirme su E-mail"/>
+                        <p class="alert alert-danger" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">Datos Incorrectos</p>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
-                        <label for="password" class="control-label">Password</label> <input id="password" class="form-control" type="password" th:field="*{password}" />
-                        <p class="error-message" th:each="error : ${#fields.errors('password')}" th:text="${error}">Validation error</p>
+                        <label for="password" class="control-label textsize-regist"></label> <input id="password" class="form-control" type="password" th:field="*{password}" placeholder="Contraseña"/>
+                        <p class="error-message textcolor-error" th:each="error : ${#fields.errors('password')}" th:text="${error}">Datos Incorrectos</p>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
-                        <label for="confirmPassword" class="control-label">Confirm
-       password</label> <input id="confirmPassword" class="form-control" type="password" th:field="*{confirmPassword}" />
-                        <p class="error-message" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">Validation error</p>
+                        <label for="confirmPassword" class="control-label textsize-regist">
+                        </label> <input id="confirmPassword" class="form-control botmargin-xs" type="password" th:field="*{confirmPassword}" placeholder="Confirme su Contraseña"/>
+                        <p class="error-message textcolor-error" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">Datos Incorrectos</p>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
-                        <input id="terms" type="checkbox" th:field="*{terms}" /> <label class="control-label" for="terms"> I agree with the <a
-       href="#">terms and conditions</a> for Registration.
-      </label>
-                        <p class="error-message" th:each="error : ${#fields.errors('terms')}" th:text="${error}">Validation error
-                        </p>
+                        <label class="control-label textsize-regist textcolor botmargin-xs" for="terms"><input id="terms" th:field="*{terms}" type="checkbox" required> Acepto los 
+                            <a href="#">terminos y condiciones</a>.</label>
+                        <p class="error-message textcolor-error" th:each="error : ${#fields.errors('terms')}" th:text="${error}">Datos Incorrectos</p>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Register</button>
-                        <span>Already registered? <a href="/" th:href="@{/login}">Login
-        here</a></span>
+                        	<button type="submit" class="btn btn-light margin-regist">Registrar</button>
+                        	<span class="textcolor margin-regist"><br>Ya esta registrado? <a href="/" th:href="@{/login}" class="btn btn-register topmargin-xs">Iniciar Sesión</a></span>
                     </div>
 
                 </form>
             </div>
-        </div>
+			  
+              
+          	</div>
+	      </div>
+      </div>
     </div>
+  </section>
 
-    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+ 
+
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+    integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  <!--iconos-->
 </body>
 </html>

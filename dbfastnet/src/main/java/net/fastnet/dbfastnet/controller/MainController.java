@@ -34,15 +34,10 @@ public class MainController {
 	private IClaimService serviceClaim;
 	
 	@GetMapping("/")
-    public String root(Model model) {
-		List<Customer>customers = serviceCustomer.list();
-    	model.addAttribute("customers", customers);
+    public String root() {
     	return "index";
     }
-	//@GetMapping("/")
-    //public String root() {
-    //    return "index";
-    //}
+
 
     @GetMapping("/login")
     public String login(Model model) {
@@ -54,21 +49,21 @@ public class MainController {
         return "user/index";
     }
     
-    //@GetMapping("/listCustomers")
-    //public String listCustomer(Model model) {
-    //	List<Customer>customers = serviceCustomer.list();
-    //	model.addAttribute("customers", customers);
-    //	return "listCustomer";
-    //}
+    @GetMapping("/listcustomer")
+    public String listCustomer(Model model) {
+    	List<Customer>customers = serviceCustomer.list();
+    	model.addAttribute("customers", customers);
+    	return "listcustomer";
+    }
     
-    @GetMapping("/listbreakdowns")
+    @GetMapping("/listbreakdown")
     public String listBreakdown(Model model) {
     	List<Breakdown>breakdowns = serviceBreakdown.list();
     	model.addAttribute("breakdowns", breakdowns);
     	return "listbreakdown";
     }
     
-    @GetMapping("/listclaims")
+    @GetMapping("/listclaim")
     public String listClaim(Model model) {
     	List<Claim>claims = serviceClaim.list();
     	model.addAttribute("claims", claims);
@@ -95,19 +90,19 @@ public class MainController {
     @PostMapping("/savecustomer")
     public String saveCustomer(@Valid Customer c, Model model) {
     	serviceCustomer.save(c);
-    	return "redirect:/listcustomers";
+    	return "redirect:/listcustomer";
     }
     
     @PostMapping("/savebreakdown")
     public String saveBreakdown(@Valid Breakdown c, Model model) {
     	serviceBreakdown.save(c);
-    	return "redirect:/listbreakdowns";
+    	return "redirect:/listbreakdown";
     }
     
     @PostMapping("/saveclaim")
     public String saveClaim(@Valid Claim c, Model model) {
     	serviceClaim.save(c);
-    	return "redirect:/listclaims";
+    	return "redirect:/listclaim";
     }
     
     @GetMapping("/editcustomer/{id}")

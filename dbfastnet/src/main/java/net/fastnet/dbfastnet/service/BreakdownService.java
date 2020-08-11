@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.fastnet.dbfastnet.entities.Breakdown;
+import net.fastnet.dbfastnet.entities.Customer;
 import net.fastnet.dbfastnet.interfaceService.IBreakdownService;
 import net.fastnet.dbfastnet.interfaces.IBreakdown;
 
@@ -28,8 +29,12 @@ public class BreakdownService implements IBreakdownService{
 
 	@Override
 	public int save(Breakdown c) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res=0;
+		Breakdown breakdown=data.save(c);
+		if(!breakdown.equals(null)) {
+			res = 1;
+		}
+		return res;
 	}
 
 	@Override

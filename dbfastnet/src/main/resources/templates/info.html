@@ -1,0 +1,114 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+  <link href="/css/main.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+  <!--Fuentes-->
+
+
+  <link rel="shortcut icon" href="/images/icon.svg">
+  <title>Data Trouble</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/}"><img src="images/logo1.png" class="logo-brand" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#Aboutus" id="home">Empresa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer" id="home">Contactos</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <section id="hero">
+    <div class="container">
+      <div class="content-center topmargin-xlg">
+        <h1>¡BIENVENIDO A DATA TROUBLE!</h1>
+        <p>En esta Aplicacion Web podra Administrar las quejas realizadas por los usuarios que utilizan nuestro Servicio
+          de Internet de Ultra Alta Velocidad.</p>
+        <a th:href="@{/login}" class="btn btn-light topmargin-lg">
+          <ion-icon name="person-outline"></ion-icon>Iniciar Sesión
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id=Aboutus>
+    <div class="container">
+      <div class="content-center topmargin-xlg">
+        <h1 class="botmargin-lg"> ACERCA DE FASTNET</h1>
+        <p>
+          En el año 2007, Fastnet se constituye a partir de un grupo de profesionales altamente calificados, 
+          con basta experiencia en las áreas de Sistemas,Electrónica, Redes y Telecomunicaciones , 
+          bajo 2 premisas básicas: La firme creencia que Internet, favorece la comunicación entre personas, 
+          los negocios, el acceso a los conocimientos y a la información en general de una manera irreemplazable. 
+          La pretensión de brindar conectividad en cualquier punto del país y especialmente a aquellos lugares que 
+          por su ubicación geográfica, quedan excluidos de las soluciones convencionales; y en los que sólo es 
+          factible utilizando tecnología de última generación. Objetivos: Proveer soluciones de conectividad a 
+          Internet, de la más alta calidad y a precios extremadamente competitivos. Investigación constante para el 
+          desarrollo de nuevos proyectos relacionados al mercado tecnológico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bgDark" id="footer">
+    <div class="container">
+        <img src="/images/logo1.png" href="#" class="logo-brand" alt="logo">
+        <ul class="list-inline topmargin-xs">
+            <li class="list-inline-item footer-menu"><ion-icon name="home-outline" class="foot-icon"></ion-icon><a th:href="@{/}">Inicio</a></li>
+            <li class="list-inline-item footer-menu"><ion-icon name="information-circle-outline" class="foot-icon"></ion-icon><a href="#Aboutus">Empresa</a></li>
+            <li class="list-inline-item footer-menu"><ion-icon name="call-outline" class="foot-icon"></ion-icon><a href="#footer">Contact: Telf: +(593) 3 2 942 880Telf: +(593) 3 2 947 54</a></li>
+        </ul>
+        <ul class="list-inline">
+            <li class="list-inline-item footer-menu"><ion-icon name="mail-outline" class="foot-icon"></ion-icon>
+              <a href="#footer">Email: informacion@fastnet.net.ec </a></li>
+              <li class="list-inline-item footer-menu"><ion-icon name="location-outline" class="foot-icon"></ion-icon>
+                <a href="#footer">Direccion: Av. Veloz y Los Sauces, HOSPIESAJ 814 </a></li>
+        </ul>
+        <small class="footer-text">©2020 All Rights Reserved.</small>
+    </div>
+</footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+    integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+  <!--iconos-->
+</body>
+
+</html>

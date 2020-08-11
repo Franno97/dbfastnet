@@ -14,14 +14,14 @@ public class Breakdown {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String IdBreakdown;
+    private String idbreakdown;
     private String description;
     
     public Breakdown() {
 	}
 
-    public Breakdown(String IdBreakdown, String description) {
-		this.IdBreakdown = IdBreakdown;
+    public Breakdown(String idbreakdown, String description) {
+		this.idbreakdown = idbreakdown;
 		this.description = description;
 	}
 
@@ -33,12 +33,12 @@ public class Breakdown {
 		this.id = id;
 	}
 
-	public String getIdBreakdown() {
-		return IdBreakdown;
+	public String getIdbreakdown() {
+		return idbreakdown;
 	}
 
-	public void setIdBreakdow(String IdBreakdown) {
-		this.IdBreakdown = IdBreakdown;
+	public void setIdbreakdow(String idbreakdown) {
+		this.idbreakdown = idbreakdown;
 	}
 
 	public String getDescription() {
@@ -53,7 +53,7 @@ public class Breakdown {
 	    public String toString() {
 	        return "Breakdown{" +
 	            "id=" + id +
-	            ", IdBreakdown='" + IdBreakdown + 
+	            ", idbreakdown='" + idbreakdown + 
 	            ", description='" + description + '\'' +
 	            '}';
 	    }

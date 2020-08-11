@@ -17,26 +17,26 @@ public class Claim{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String IdCustomer;
-    private String IdBreakdown;
-    private String requestChannel;
-    private Date dateTimeReport;
-    private Date dateTimeRepair;
-    private Time repairTime;
-    private String solutionDesc;
+    private String idcustomer;
+    private String idbreakdown;
+    private String requestchannel;
+    private Date datetimereport;
+    private Date datetimerepair;
+    private Time repairtime;
+    private String solutiondesc;
     
 	public Claim() {
 	}
 
-	public Claim(String IdCustomer, String IdBreakdown, String requestChannel,
-			Date dateTimeReport, Date dateTimeRepair, Time repairTime, String solutionDesc) {
-		this.IdCustomer = IdCustomer;
-		this.IdBreakdown = IdBreakdown;
-		this.requestChannel = requestChannel;
-		this.dateTimeReport = dateTimeReport;
-		this.dateTimeRepair = dateTimeRepair;
-		this.repairTime = repairTime;
-		this.solutionDesc = solutionDesc;
+	public Claim(String idcustomer, String idbreakdown, String requestchannel,
+			Date datetimereport, Date datetimerepair, Time repairtime, String solutiondesc) {
+		this.idcustomer = idcustomer;
+		this.idbreakdown = idbreakdown;
+		this.requestchannel = requestchannel;
+		this.datetimereport = datetimereport;
+		this.datetimerepair = datetimerepair;
+		this.repairtime = repairtime;
+		this.solutiondesc = solutiondesc;
 	}
 
 	public int getId() {
@@ -47,60 +47,60 @@ public class Claim{
 		this.id = id;
 	}
 
-	public String getIdCustomer() {
-		return IdCustomer;
+	public String getIdcustomer() {
+		return idcustomer;
 	}
 
-	public void setIdCustomer(String IdCustomer) {
-		this.IdCustomer = IdCustomer;
+	public void setIdcustomer(String idcustomer) {
+		this.idcustomer = idcustomer;
 	}
 
-	public String getIdBreakdown() {
-		return IdBreakdown;
+	public String getIdbreakdown() {
+		return idbreakdown;
 	}
 
-	public void setIdBreakdown(String IdBreakdown) {
-		this.IdBreakdown = IdBreakdown;
+	public void setIdbreakdown(String idbreakdown) {
+		this.idbreakdown = idbreakdown;
 	}
 
-	public String getRequestChannel() {
-		return requestChannel;
+	public String getRequestchannel() {
+		return requestchannel;
 	}
 
-	public void setRequestChannel(String requestChannel) {
-		this.requestChannel = requestChannel;
+	public void setRequestchannel(String requestchannel) {
+		this.requestchannel = requestchannel;
 	}
 
-	public Date getDateTimeReport() {
-		return dateTimeReport;
+	public Date getDatetimereport() {
+		return datetimereport;
 	}
 
-	public void setDateTimeReport(Date dateTimeReport) {
-		this.dateTimeReport = dateTimeReport;
+	public void setDatetimereport(Date datetimereport) {
+		this.datetimereport = datetimereport;
 	}
 
-	public Date getDateTimeRepair() {
-		return dateTimeRepair;
+	public Date getDatetimerepair() {
+		return datetimerepair;
 	}
 
-	public void setDateTimeRepair(Date dateTimeRepair) {
-		this.dateTimeRepair = dateTimeRepair;
+	public void setDatetimerepair(Date datetimerepair) {
+		this.datetimerepair = datetimerepair;
 	}
 
-	public Time getRepairTime() {
-		return repairTime;
+	public Time getRepairtime() {
+		return repairtime;
 	}
 
-	public void setRepairTime(Time repairTime) {
-		this.repairTime = repairTime;
+	public void setRepairtime(Time repairtime) {
+		this.repairtime = repairtime;
 	}
 
-	public String getSolutionDesc() {
-		return solutionDesc;
+	public String getSolutiondesc() {
+		return solutiondesc;
 	}
 
-	public void setSolutionDesc(String solutionDesc) {
-		this.solutionDesc = solutionDesc;
+	public void setSolutiondesc(String solutiondesc) {
+		this.solutiondesc = solutiondesc;
 	}
 	
 
@@ -108,13 +108,13 @@ public class Claim{
 	    public String toString() {
 	        return "Claim{" +
 	            "id=" + id +
-	            ", IdCustomer='" + IdCustomer +
-	            ", IdBreakdown='" + IdBreakdown +
-	            ", requestChannel='" + requestChannel + 
-	            ", dateTimeReport='" + dateTimeReport + 
-	            ", dateTimeRepair='" + dateTimeRepair + 
-	            ", repairTime='" + repairTime +
-	            ", solutionDesc='" + solutionDesc + '\'' +
+	            ", idcustomer='" + idcustomer +
+	            ", idbreakdown='" + idbreakdown +
+	            ", requestchannel='" + requestchannel + 
+	            ", datetimereport='" + datetimereport + 
+	            ", datetimerepair='" + datetimerepair + 
+	            ", repairtime='" + repairtime +
+	            ", solutiondesc='" + solutiondesc + '\'' +
 	            '}';
 	    }
 }
