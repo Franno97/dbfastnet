@@ -38,7 +38,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Brakedown Management</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
           <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
           <div class="dropdown-divider"></div>
           <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
@@ -54,38 +54,36 @@
             <div class="modal-content">
 				
             	<form th:action="@{/savecustomer}" th:object=${customer} method="POST">
-            		<div class="card">
             			<div class="class-header">
             				<h3 class="textcolor">CUSTOMER DATA</h3>
             			</div>
-            		</div>
             		<div class="card-body">
 
             			<div class="form group">
-            				<label class="textcolor" type="hidden" >ID</label>
-            				<input th:field="*{id}" type="hidden" class="form-control" />
+            				<label class="textcolor" type="hidden" ></label>
+            				<input th:field="*{id}" type="hidden" class="form-control botmargin-sm" />
             			</div>
             			<div class="form group">
             				<label class="textcolor" >ID CUSTOMER</label>
-            				<input th:field="*{idcustomer}" type="text" class="form-control"/>
+            				<input th:field="*{idcustomer}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
             				<label class="textcolor">NAME</label>
-            				<input th:field="*{name}" type="text" class="form-control"/>
+            				<input th:field="*{name}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
             				<label class="textcolor">PHONE</label>
-            				<input th:field="*{phone}" type="text" class="form-control"/>
+            				<input th:field="*{phone}" type="text" class="form-control botmargin-sm"/>
             			</div>
             			<div class="form group">
             				<label class="textcolor">PROVINCE</label>
-            				<input th:field="*{province}" type="text" class="form-control"/>
+            				<input th:field="*{province}" type="text" class="form-control botmargin-sm"/>
             			</div>
             			<div class="form group">
             				<label class="textcolor">CONNECTION TYPE</label>
-            				<input th:field="*{connectiontype}" type="text" class="form-control"/>
+            				<input th:field="*{connectiontype}" type="text" class="form-control botmargin-sm" required/>
             			</div>
-            			<div class="card-footer">
+            			<div class="form group">
             				<input type="submit" value="Guardar" class="btn btn-success">
             			</div>
             		</div>	

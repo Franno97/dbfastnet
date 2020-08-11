@@ -58,31 +58,31 @@
                 <form th:action="@{/registration}" th:object="${user}" method="post">
 
                     <div class="form-group" th:classappend="${#fields.hasErrors('firstName')}? 'has-error':''">
-                        <label for="firstName"></label> <input id="firstName" class="form-control" autofocus="autofocus" th:field="*{firstName}" placeholder="Nombre" />
+                        <label for="firstName"></label> <input id="firstName" class="form-control" autofocus="autofocus" th:field="*{firstName}" placeholder="Nombre" required/>
                         <div class="alert alert-danger" th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('lastName')}? 'has-error':''">
-                        <label for="lastName" class="control-label textsize-regist"></label> <input id="lastName" class="form-control" th:field="*{lastName}" placeholder="Apellido" />
+                        <label for="lastName" class="control-label textsize-regist"></label> <input id="lastName" class="form-control" th:field="*{lastName}" placeholder="Apellido" required />
                         <div class="alert alert-danger" th:each="error : ${#fields.errors('lastName')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
                     <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
-                        <label for="email" class="control-label textsize-regist"></label> <input id="email" class="form-control" th:field="*{email}" placeholder="E-mail"/>
+                        <label for="email" class="control-label textsize-regist"></label> <input id="email" class="form-control" th:field="*{email}" placeholder="E-mail" required/>
                         <div class="alert alert-danger" th:each="error : ${#fields.errors('email')}" th:text="${error}">Datos Incorrectos</div>
                     </div>
-                    <div class="form-group" th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
+                    <!-- <div class="form-group"  th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error':''">
                         <label for="confirmEmail" class="control-label textsize-regist">
                         </label> <input id="confirmEmail" class="form-control" th:field="*{confirmEmail}" placeholder="Confirme su E-mail"/>
                         <p class="alert alert-danger" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">Datos Incorrectos</p>
-                    </div>
+                    </div> -->
                     <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
-                        <label for="password" class="control-label textsize-regist"></label> <input id="password" class="form-control" type="password" th:field="*{password}" placeholder="Contraseña"/>
+                        <label for="password" class="control-label textsize-regist"></label> <input id="password" class="form-control" type="password" th:field="*{password}" placeholder="Contraseña" required/>
                         <p class="error-message textcolor-error" th:each="error : ${#fields.errors('password')}" th:text="${error}">Datos Incorrectos</p>
                     </div>
-                    <div class="form-group" th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
+                   <!--  <div class="form-group"  th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
                         <label for="confirmPassword" class="control-label textsize-regist">
                         </label> <input id="confirmPassword" class="form-control botmargin-xs" type="password" th:field="*{confirmPassword}" placeholder="Confirme su Contraseña"/>
                         <p class="error-message textcolor-error" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">Datos Incorrectos</p>
-                    </div>
+                    </div>  -->
                     <div class="form-group" th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
                         <label class="control-label textsize-regist textcolor botmargin-xs" for="terms"><input id="terms" th:field="*{terms}" type="checkbox" required> Acepto los 
                             <a href="#">terminos y condiciones</a>.</label>

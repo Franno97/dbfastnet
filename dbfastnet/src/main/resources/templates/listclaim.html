@@ -17,7 +17,7 @@
 
 
   <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>Data Trouble | Home</title>
+  <title>Data Trouble | Claim</title>
 </head>
 
  
@@ -38,7 +38,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Brakedown Management</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
           <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
           <div class="dropdown-divider"></div>
           <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
