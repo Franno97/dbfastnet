@@ -17,7 +17,7 @@
 
 
   <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>Data Trouble | New Breakdown</title>
+  <title>DataTrouble | Nueva Averia</title>
 </head>
 
  
@@ -37,11 +37,11 @@
             Usuario
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
-          <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
+          <a class="dropdown-item" th:href="@{/listcustomer}">Administracion Clientes</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Administracion Averias</a>
+          <a class="dropdown-item" th:href="@{/listclaim}">Administracion Reclamos</a>
           <div class="dropdown-divider"></div>
-          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
+          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
         </div>
       </li>
     </div>
@@ -55,7 +55,7 @@
 				
             	<form th:action="@{/savebreakdown}" th:object=${breakdown} method="POST">
              			<div class="class-header">
-            				<h3 class="textcolor">BREAKDOWN DATA</h3>
+            				<h3 class="textcolor">Datos de la Averia</h3>
             			</div>
             		<div class="card-body">
 						<div class="form group">
@@ -67,7 +67,7 @@
             				<input th:field="*{idbreakdown}" type="hidden" class="form-control botmargin-sm"/>
             			</div>
             			<div class="form group">
-            				<label class="textcolor">DESCRIPTION</label>
+            				<label class="textcolor">Descripcion</label>
             				<input th:field="*{description}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">

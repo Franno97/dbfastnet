@@ -1,14 +1,10 @@
 <!doctype html>
 <html lang="en">
 
- 
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
- 
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
@@ -16,18 +12,10 @@
     
   <link href="/css/main.css" rel="stylesheet" />
 
- 
-
    <!--Fuentes-->
   <link rel="shortcut icon" th:href="@{/images/icon.svg}">
-  <title>Data Trouble | Login</title>
+  <title>DataTrouble | Inicio de Sesion</title>
 </head>
-
- 
-
- 
-
- 
 
 <body>
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -42,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="login.html" id="home">Home</a>
+            <a class="nav-link" href="login.html" id="home">Inicio</a>
           </li>
         </ul>
       </div>
@@ -62,25 +50,25 @@
 
                <form th:action="@{/login}" method="post">
                 <div th:if="${param.error}">
-                  <div class="alert alert-danger">Invalid username or password.
+                  <div class="alert alert-danger">E-mail o contraseña incorrecta.
                   </div>
                 </div>
                 <div th:if="${param.logout}">
-                  <div class="alert alert-info">You have been logged out.</div>
+                  <div class="alert alert-info">Te has deslogueado con exito.</div>
                 </div>
                 <div class="form-group">
-                  <label for="username">Username</label>: <input type="text" id="username" name="username"
-                    class="form-control botmargin-xs" autofocus="autofocus" placeholder="Username" />
+                  <label for="username">Email</label>: <input type="text" id="username" name="username"
+                    class="form-control botmargin-xs" autofocus="autofocus" placeholder="E-mail" />
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>: <input type="password" id="password" name="password"
-                    class="form-control botmargin-xs" placeholder="Password" />
+                    class="form-control botmargin-xs" placeholder="Contraseña" />
                 </div>
                 <div class="form-group">
                   <div class="row">
                       <input type="submit" name="login-submit" id="login-submit" class="btn btn-light topmargin-xs"
-                        value="Log In" />
-                      <a class="btn btn-register botmargin-sm" href="/" th:href="@{/registration}">Register here</a></span>
+                        value="Iniciar Sesion" />
+                      <a class="btn btn-register botmargin-sm" href="/" th:href="@{/registration}">Registrarse</a></span>
                   </div>
                 </div>
             </div> 
@@ -89,12 +77,6 @@
       </div>
     </div>
   </section>
-
- 
-
- 
-
- 
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

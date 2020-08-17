@@ -17,7 +17,7 @@
 
 
   <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>Data Trouble | Breakdown</title>
+  <title>DataTrouble | Averias</title>
 </head>
 
  
@@ -37,11 +37,11 @@
             Usuario
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
-          <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
+          <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
+          <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
-          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
+          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
         </div>
       </li>
     </div>
@@ -53,13 +53,13 @@
         <div class="col-sm main-section">
             <div class="modal-content">
 
-        		<a th:href="@{/newbreakdown}" class="btn btn-primary">New</a>
+        		<a th:href="@{/newbreakdown}" class="btn btn-primary">Nuevo</a>
     				<table class="table">
         				<thead>
         					<tr>
 	    						<th>Id</th>
 	        					<!--  <th type="hidden">Id Breakdown</th> -->
-	        					<th>Description</th>
+	        					<th>Descripcion</th>
         					</tr>
         				</thead>
         					<tr th:each="breakdown:${breakdowns}">
@@ -67,8 +67,8 @@
 	        				<!--  <td th:text="${breakdown.idbreakdown}"></td> -->
 	        				<td th:text="${breakdown.description}"></td>
 	        				<td>
-        						<a th:href="@{/editbreakdown/}+${breakdown.id}" class="btn btn-warning">Edit</a>
-        						<a th:onclick="eliminar([[${breakdown.id}]])" class="btn btn-danger">Delete</a>
+        						<a th:href="@{/editbreakdown/}+${breakdown.id}" class="btn btn-warning">Editar</a>
+        						<a th:onclick="eliminar([[${breakdown.id}]])" class="btn btn-danger">Eliminar</a>
     						</td>
         				</tr>
         		</table>

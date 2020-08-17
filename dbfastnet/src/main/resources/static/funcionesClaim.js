@@ -1,12 +1,12 @@
 function eliminar(id){
 Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
+  title: 'Esta seguro?',
+  text: "No podra revertirlo!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
+  confirmButtonText: 'Si, borralo!'
 }).then((result) => {
   if (result.value) {
   		$.ajax({
@@ -16,8 +16,8 @@ Swal.fire({
   			}
   		});
     Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
+      'Eliminado!',
+      'El reclamo ha sido borrado',
       'success'
     ).then((ok)=>{
     	if(ok){

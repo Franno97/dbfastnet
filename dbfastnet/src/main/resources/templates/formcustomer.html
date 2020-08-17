@@ -17,7 +17,7 @@
 
 
   <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>Data Trouble | New Customer</title>
+  <title>DataTrouble | Nuevo Cliente</title>
 </head>
 
  
@@ -37,11 +37,11 @@
             Usuario
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
-          <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
+          <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
+          <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
-          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
+          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
         </div>
       </li>
     </div>
@@ -55,7 +55,7 @@
 				
             	<form th:action="@{/savecustomer}" th:object=${customer} method="POST">
             			<div class="class-header">
-            				<h3 class="textcolor">CUSTOMER DATA</h3>
+            				<h3 class="textcolor">Datos del Cliente</h3>
             			</div>
             		<div class="card-body">
 
@@ -64,23 +64,23 @@
             				<input th:field="*{id}" type="hidden" class="form-control botmargin-sm" />
             			</div>
             			<div class="form group">
-            				<label class="textcolor" >ID CUSTOMER</label>
+            				<label class="textcolor" >CI cliente</label>
             				<input th:field="*{idcustomer}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
-            				<label class="textcolor">NAME</label>
+            				<label class="textcolor">Nombre</label>
             				<input th:field="*{name}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
-            				<label class="textcolor">PHONE</label>
+            				<label class="textcolor">Telefono</label>
             				<input th:field="*{phone}" type="text" class="form-control botmargin-sm"/>
             			</div>
             			<div class="form group">
-            				<label class="textcolor">PROVINCE</label>
+            				<label class="textcolor">Provincia</label>
             				<input th:field="*{province}" type="text" class="form-control botmargin-sm"/>
             			</div>
             			<div class="form group">
-            				<label class="textcolor">CONNECTION TYPE</label>
+            				<label class="textcolor">Tipo de conexion</label>
             				<input th:field="*{connectiontype}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">

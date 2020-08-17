@@ -17,7 +17,7 @@
 
 
   <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>Data Trouble | Claim</title>
+  <title>DataTrouble | Reclamos</title>
 </head>
 
  
@@ -37,11 +37,11 @@
             Usuario
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{/listcustomer}">Customer Management</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Breakdown Management</a>
-          <a class="dropdown-item" th:href="@{/listclaim}">Claim Management</a>
+          <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
+          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
+          <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
-          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Log out</a>
+          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar Sesion</a>
         </div>
       </li>
     </div>
@@ -53,18 +53,18 @@
         <div class="col-sm main-section">
             <div class="modal-content">
 
-        		<a th:href="@{/newclaim}" class="btn btn-primary">New</a>
+        		<a th:href="@{/newclaim}" class="btn btn-primary">Nuevo</a>
     				<table class="table">
         				<thead>
         					<tr>
 	    						<th>Id</th>
-	        					<th>Id Customer</th>
-	        					<th>Id Breakdown</th>
-	        					<th>Request Channel</th>
-	        					<th>Date Time Report</th>
-	        					<th>Date Time Repair</th>
-	        					<th>Repair Time</th>
-	        					<th>Solution Description</th>
+	        					<th>CI Cliente</th>
+	        					<th>Id Averia</th>
+	        					<th>Canal de Requerimiento</th>
+	        					<th>Fecha/Hora del reporte</th>
+	        					<th>Fecha/Hora de la reparacion</th>
+	        					<th>Tiempo de reparacion</th>
+	        					<th>Descripcion de la solucion</th>
         					</tr>
         				</thead>
         					<tr th:each="claim:${claims}">
@@ -76,8 +76,8 @@
 	        				<td th:text="${claim.datetimerepair}"></td>
 	        				<td th:text="${claim.solutiondesc}"></td>
         					<td>
-        						<a th:href="@{/editclaim/}+${claim.id}" class="btn btn-warning">Edit</a>
-        						<a th:onclick="eliminar([[${claim.id}]])" class="btn btn-danger">Delete</a>
+        						<a th:href="@{/editclaim/}+${claim.id}" class="btn btn-warning">Editar</a>
+        						<a th:onclick="eliminar([[${claim.id}]])" class="btn btn-danger">Eliminar</a>
     						</td>
         				</tr>
         		</table>

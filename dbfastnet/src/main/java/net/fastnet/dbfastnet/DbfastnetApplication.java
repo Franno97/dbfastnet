@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DbfastnetApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DbfastnetApplication.class, args);
-		
+		SpringApplication.run(DbfastnetApplication.class, args);		
 	}
-
 }
