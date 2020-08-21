@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -17,8 +19,15 @@ public class Claim{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String idcustomer;
-    private String idbreakdown;
+    
+    @ManyToOne
+    @JoinColumn(name="Customer", referencedColumnName = "id")
+    private Customer idcustomer;
+    
+    @ManyToOne
+    @JoinColumn(name="Breakdown", referencedColumnName = "id")
+    private Breakdown idbreakdown;
+    
     private String requestchannel;
     private String datetimereport;
     private String datetimerepair;
@@ -28,7 +37,7 @@ public class Claim{
 	public Claim() {
 	}
 
-	public Claim(String idcustomer, String idbreakdown, String requestchannel,
+	public Claim(Customer idcustomer, Breakdown idbreakdown, String requestchannel,
 			String datetimereport, String datetimerepair, String repairtime, String solutiondesc) {
 		this.idcustomer = idcustomer;
 		this.idbreakdown = idbreakdown;
@@ -47,19 +56,19 @@ public class Claim{
 		this.id = id;
 	}
 
-	public String getIdcustomer() {
+	public Customer getIdcustomer() {
 		return idcustomer;
 	}
 
-	public void setIdcustomer(String idcustomer) {
+	public void setIdcustomer(Customer idcustomer) {
 		this.idcustomer = idcustomer;
 	}
 
-	public String getIdbreakdown() {
+	public Breakdown getIdbreakdown() {
 		return idbreakdown;
 	}
 
-	public void setIdbreakdown(String idbreakdown) {
+	public void setIdbreakdown(Breakdown idbreakdown) {
 		this.idbreakdown = idbreakdown;
 	}
 

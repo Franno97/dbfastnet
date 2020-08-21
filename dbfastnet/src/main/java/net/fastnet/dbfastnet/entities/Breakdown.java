@@ -13,7 +13,8 @@ public class Breakdown {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    
+    
     private String idbreakdown;
     private String description;
     
