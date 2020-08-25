@@ -15,6 +15,7 @@ public class Customer{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    
     private String idcustomer;
     private String name;
     private String phone;

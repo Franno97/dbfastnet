@@ -66,7 +66,9 @@ public class MainController {
     @GetMapping("/listclaim")
     public String listClaim(Model model) {
     	List<Claim>claims = serviceClaim.list();
+    	//List<Breakdown>breakdowns = serviceBreakdown.list();
     	model.addAttribute("claims", claims);
+    	//model.addAttribute("breakdowns", breakdowns);
     	return "listclaim";
     }
     

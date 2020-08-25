@@ -69,11 +69,12 @@
         				</thead>
         					<tr th:each="claim:${claims}">
 	        				<td th:text="${claim.id}"></td>
-	        				<td th:text="${claim.idcustomer}"></td>
+	        				<td th:text="${claim.idcustomer.name}"></td>
 	        				<td th:text="${claim.idbreakdown}"></td>
 	        				<td th:text="${claim.requestchannel}"></td>
 	        				<td th:text="${claim.datetimereport}"></td>
 	        				<td th:text="${claim.datetimerepair}"></td>
+	        				<td th:text="${claim.repairtime}"></td>
 	        				<td th:text="${claim.solutiondesc}"></td>
         					<td>
         						<a th:href="@{/editclaim/}+${claim.id}" class="btn btn-warning">Editar</a>

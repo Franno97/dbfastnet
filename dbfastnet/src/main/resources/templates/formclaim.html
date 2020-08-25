@@ -2,135 +2,165 @@
 <!-- <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> -->
 
 <head>
- <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-    integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
 
-  <link href="/css/main.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
-  <!--Fuentes-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap"
+	rel="stylesheet">
+<!--Fuentes-->
 
 
-  <link rel="shortcut icon" th:href="@{images/icon.svg}">
-  <title>DataTrouble | Nuevo Reclamo</title>
+<link rel="shortcut icon" th:href="@{images/icon.svg}">
+<title>DataTrouble | Nuevo Reclamo</title>
 </head>
 
- 
+
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="static/images/logo1.png"th:src="@{/images/logo1.png}" class="logo-brand" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container">
+			<a class="navbar-brand" th:href="@{/}"><img
+				src="static/images/logo1.png" th:src="@{/images/logo1.png}"
+				class="logo-brand" alt="logo"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<ion-icon name="menu-outline"></ion-icon>
+			</button>
 
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" th:href="@{/}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Usuario
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
-          <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
-          <div class="dropdown-divider"></div>
-          <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
-        </div>
-      </li>
-    </div>
-  </nav>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" th:href="@{/}" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> Usuario </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" th:href="@{/listcustomer}">Administrar
+						Clientes</a> <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar
+						Averias</a> <a class="dropdown-item" th:href="@{/listclaim}">Administrar
+						Reclamos</a>
+					<div class="dropdown-divider"></div>
+					<a sec:authorize="isAuthenticated()" class="dropdown-item"
+						th:href="@{/logout}">Cerrar sesion</a>
+				</div></li>
+		</div>
+	</nav>
 
-  <section id="hero">
-    <div class="container mt-4">
-      <div class="content-center topmargin-xlg">
-        <div class="col-sm-6 main-section">
-            <div class="modal-content">
-				
-            	<form th:action="@{/saveclaim}" th:object=${claim} method="POST">
-            			<div class="class-header">
-            				<h3 class="textcolor">Datos del reclamo</h3>
-            			</div>
-            		<div class="card-body">
+	<section id="hero">
+		<div class="container mt-4">
+			<div class="content-center topmargin-xlg">
+				<div class="col-sm-6 main-section">
+					<div class="modal-content">
 
-            			<div class="form group">
-            				<label class="textcolor" type="hidden" ></label>
-            				<input th:field="*{id}" type="hidden" class="form-control " />
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor" >CI cliente</label>
-            				<input th:field="*{idcustomer}" type="text" class="form-control botmargin-sm" required />
-            			</div>
-            			<div class="form group">
-            				<!-- <label class="textcolor">ID Averia</label>
-            				<input thtfield="*{idbreakdown}" type="text" class="form-control botmargin-sm" required/> -->
-            				<label class="textcolor" for="averias">ID Averia</label>
-  								<select name="averia" id="averia">
-    								<option value="${breakdown.id}"></option>
-  								</select>
-  								<br><br>
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor">Canal de Requerimiento</label>
-            				<input th:field="*{requestchannel}" type="text" class="form-control botmargin-sm" required/>
-            				
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor">Fecha/hora del reporte</label>
-            				<input th:field="*{datetimereport}" type="text" class="form-control botmargin-sm"/>
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor">Fecha/hora de la reparacion</label>
-            				<input th:field="*{datetimerepair}" type="text" class="form-control botmargin-sm"/>
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor">Tiempo de reparacion</label>
-            				<input th:field="*{repairtime}" type="text" class="form-control botmargin-sm"/>
-            			</div>
-            			<div class="form group">
-            				<label class="textcolor">Descripcion de la solucion</label>
-            				<input th:field="*{solutiondesc}" type="text" class="form-control botmargin-sm"/>
-            			</div>
-            			<div class="form group">
-            				<input type="submit" value="Guardar" class="btn btn-success">
-            			</div>
-            		</div>	
-            	</form>
-            	
-            	
-        	</div>
-   	    </div>
- 	  </div>
-     </div>
- </section>
- 
+						<form th:action="@{/saveclaim}" th:object=${claim} method="POST">
+							<div class="class-header">
+								<h3 class="textcolor">Datos del reclamo</h3>
+							</div>
+							<div class="card-body">
 
-    
-      <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
-    integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-  <!--iconos-->
-  
-  
-  	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+								<div class="form group">
+									<label class="textcolor" type="hidden"></label> <input
+										th:field="*{id}" type="hidden" class="form-control " />
+								</div>
+								<div class="form group">
+									<label class="textcolor">CI cliente</label> <input
+										th:field="*{idcustomer}" type="text"
+										class="form-control botmargin-sm" required />
+								</div>
+								<div class="form group">
+									 <label class="textcolor">ID Averia</label>
+            				<input thtfield="*{idbreakdown}" type="text" class="form-control botmargin-sm" required/> 
+									<!--<label class="textcolor" for="averias">ID Averia</label> <select
+										name="averia" id="averia">
+										<option value="{idbreakdown.id}"></option>
+									</select> <br>
+									<br>-->
+								</div>
+								
+								<div class="form group">
+									<label class="textcolor">Canal de Requerimiento</label> 
+									<select th:field="*{requestchannel}" name="canalRequerimiento" required>
+  											<option value="0"></option>
+  											<option value="PERSONALIZADO">Personalizado</option>
+  											<option value="TELEFONICO">Telefónico</option>
+  											<option value="OFICIO">Oficio</option>
+  											<option value="EMAIL">Correo Electrónico</option>
+  											<option value="PAGINA WEB">Página Web</option>
+									</select>
+										<!-- <input
+										th:field="*{requestchannel}" type="text"
+										class="form-control botmargin-sm" required /> -->
+								</div>
+								
+								<div class="form group">
+									<label class="textcolor">Fecha/hora del reporte</label> <input
+										th:field="*{datetimereport}" type="datetime-local"
+										class="form-control botmargin-sm" />
+								</div>
+								<div class="form group">
+									<label class="textcolor">Fecha/hora de la reparacion</label> <input
+										th:field="*{datetimerepair}" type="datetime-local"
+										class="form-control botmargin-sm" />
+								</div>
+								<div class="form group">
+									<label class="textcolor">Tiempo de reparacion</label> <input
+										th:field="*{repairtime}" type="text"
+										class="form-control botmargin-sm" />
+								</div>
+								<div class="form group">
+									<label class="textcolor">Descripcion de la solucion</label> <input
+										th:field="*{solutiondesc}" type="text"
+										class="form-control botmargin-sm" />
+								</div>
+								<div class="form group">
+									<input type="submit" value="Guardar" class="btn btn-success">
+								</div>
+							</div>
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+		integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+	<!--iconos-->
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 </body>
 </html>
