@@ -22,8 +22,8 @@ public class CustomerService implements ICustomerService{
 	}
 
 	@Override
-	public Optional<Customer> listId(int id) {
-		return data.findById(id);
+	public Optional<Customer> listId(String idcustomer) {
+		return data.findById(idcustomer);
 	}
 
 	@Override
@@ -37,8 +37,8 @@ public class CustomerService implements ICustomerService{
 	}
 
 	@Override
-	public void delete(int id) {
-		data.deleteById(id);
+	public void delete(String idcustomer) {
+		data.deleteById(idcustomer);
 	}
 
 }

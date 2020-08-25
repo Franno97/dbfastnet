@@ -7,7 +7,7 @@ import net.fastnet.dbfastnet.entities.Customer;
 
 public interface ICustomerService {
 	public List<Customer>list();
-	public Optional<Customer>listId(int id);
+	public Optional<Customer>listId(String idcustomer);
 	public int save(Customer c);
-	public void delete(int id);
+	public void delete(String idcustomer);
 }

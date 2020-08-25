@@ -53,19 +53,20 @@
         <div class="col-sm-6 main-section">
             <div class="modal-content">
 				
-            	<form th:action="@{/savecustomer}" th:object=${customer} method="POST">
+            	<form th:onsubmit="validar(idcustomer)" th:action="@{/savecustomer}" th:object=${customer} method="POST">
             			<div class="class-header">
             				<h3 class="textcolor">Datos del Cliente</h3>
             			</div>
             		<div class="card-body">
 
-            			<div class="form group">
+            			<!--  <div class="form group">
             				<label class="textcolor" type="hidden" ></label>
             				<input th:field="*{id}" type="hidden" class="form-control botmargin-sm" />
-            			</div>
+            			</div>-->
+            			
             			<div class="form group">
             				<label class="textcolor" >CI cliente</label>
-            				<input th:field="*{idcustomer}" type="text" class="form-control botmargin-sm" required/>
+            				<input th:field="*{idcustomer}" id="idcustomer" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
             				<label class="textcolor">Nombre</label>
@@ -84,7 +85,7 @@
             				<input th:field="*{connectiontype}" type="text" class="form-control botmargin-sm" required/>
             			</div>
             			<div class="form group">
-            				<input  th:onclick="validar([[${customer.idcustomer}]])" type="submit" value="Guardar" class="btn btn-success">
+            				<input type="submit"  value="Guardar" class="btn btn-success">
             			</div>
             		</div>	
             	</form>

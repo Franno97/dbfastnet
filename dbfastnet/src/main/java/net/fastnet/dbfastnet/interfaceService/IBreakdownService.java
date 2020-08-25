@@ -6,7 +6,7 @@ import net.fastnet.dbfastnet.entities.Breakdown;
 
 public interface IBreakdownService {
 	public List<Breakdown>list();
-	public Optional<Breakdown>listId(int id);
+	public Optional<Breakdown>listId(String idbreakdown);
 	public int save(Breakdown c);
-	public void delete(int id);
+	public void delete(String idbreakdown);
 }

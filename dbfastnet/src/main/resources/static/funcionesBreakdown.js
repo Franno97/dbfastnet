@@ -1,4 +1,4 @@
-function eliminar(id){
+function eliminar(idbreakdown){
 Swal.fire({
   title: 'Esta seguro?',
   text: "No podra revertirlo!",
@@ -10,7 +10,7 @@ Swal.fire({
 }).then((result) => {
   if (result.value) {
   		$.ajax({
-  			url:"/deletebreakdown/"+id,
+  			url:"/deletebreakdown/"+idbreakdown,
   			success: function(res) {
   				console.log(res);
   			}

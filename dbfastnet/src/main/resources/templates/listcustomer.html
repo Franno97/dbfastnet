@@ -52,10 +52,11 @@
             <div class="modal-content">
 
         		<a th:href="@{/newcustomer}" class="btn btn-primary">Nuevo</a>
+        		<a th:href="@{/report/}+pdf" class="btn btn-primary">Reporte</a>
     				<table class="table">
         				<thead>
         					<tr>
-	    						<th>Id</th>
+	    						<!--  <th>Id</th>-->
 	        					<th>CI Cliente</th>
 	        					<th>Nombre</th>
 	        					<th>Telefono</th>
@@ -65,17 +66,18 @@
         					</tr>
         				</thead>
         					<tr th:each="customer:${customers}">
-	        				<td th:text="${customer.id}"></td>
+	        				<!--<td th:text="${customer.id}"></td>-->
 	        				<td th:text="${customer.idcustomer}"></td>
 	        				<td th:text="${customer.name}"></td>
 	        				<td th:text="${customer.phone}"></td>
 	        				<td th:text="${customer.province}"></td>
 	        				<td th:text="${customer.connectiontype}"></td>
         					<td>
-        						<a th:href="@{/editcustomer/}+${customer.id}" class="btn btn-warning">Editar</a>
-        						<a th:onclick="eliminar([[${customer.id}]])" class="btn btn-danger">Eliminar</a>
+        						<a th:href="@{/editcustomer/}+${customer.idcustomer}" class="btn btn-warning">Editar</a>
+        						<a th:onclick="eliminar([[${customer.idcustomer}]])" class="btn btn-danger">Eliminar</a>
     						</td>
         				</tr>
+        				
         		</table>
 
         	</div>

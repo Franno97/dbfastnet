@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import net.fastnet.dbfastnet.entities.Customer;
 
 @Repository
-public interface ICustomer extends CrudRepository<Customer, Integer>{
+public interface ICustomer extends CrudRepository<Customer, String>{
 
 }

@@ -10,11 +10,9 @@ import javax.persistence.Table;
 @Table (name = "Breakdown")
 public class Breakdown {
 
+	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    
+    @GeneratedValue
     private String idbreakdown;
     private String description;
     
@@ -25,15 +23,7 @@ public class Breakdown {
 		this.idbreakdown = idbreakdown;
 		this.description = description;
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+    
 	public String getIdbreakdown() {
 		return idbreakdown;
 	}
@@ -53,10 +43,8 @@ public class Breakdown {
 	   @Override
 	    public String toString() {
 	        return "Breakdown{" +
-	            "id=" + id +
-	             ", description='" + description +
-	            ", idbreakdown='" + idbreakdown + '\'' +
+	             ", idbreakdown='" + idbreakdown +
+	            ", description='" + description + '\'' +
 	            '}';
 	    }
 }
-

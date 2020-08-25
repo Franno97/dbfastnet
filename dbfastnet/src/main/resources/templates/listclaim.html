@@ -58,7 +58,7 @@
         				<thead>
         					<tr>
 	    						<th>Id</th>
-	        					<th>CI Cliente</th>
+	        					<th>Nombre Cliente</th>
 	        					<th>Id Averia</th>
 	        					<th>Canal de Requerimiento</th>
 	        					<th>Fecha/Hora del reporte</th>
@@ -70,7 +70,7 @@
         					<tr th:each="claim:${claims}">
 	        				<td th:text="${claim.id}"></td>
 	        				<td th:text="${claim.idcustomer.name}"></td>
-	        				<td th:text="${claim.idbreakdown}"></td>
+	        				<td th:text="${claim.idbreakdown.description}"></td>
 	        				<td th:text="${claim.requestchannel}"></td>
 	        				<td th:text="${claim.datetimereport}"></td>
 	        				<td th:text="${claim.datetimerepair}"></td>

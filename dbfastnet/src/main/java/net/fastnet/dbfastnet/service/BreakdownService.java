@@ -23,8 +23,8 @@ public class BreakdownService implements IBreakdownService{
 	}
 
 	@Override
-	public Optional<Breakdown> listId(int id) {
-		return data.findById(id);
+	public Optional<Breakdown> listId(String idbreakdown) {
+		return data.findById(idbreakdown);
 	}
 
 	@Override
@@ -38,8 +38,7 @@ public class BreakdownService implements IBreakdownService{
 	}
 
 	@Override
-	public void delete(int id) {
-		data.deleteById(id);	
+	public void delete(String idbreakdown) {
+		data.deleteById(idbreakdown);	
 	}
-
 }

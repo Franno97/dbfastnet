@@ -21,11 +21,11 @@ public class Claim{
     private int id;
     
     @ManyToOne
-    @JoinColumn(name="Customer", referencedColumnName = "id")
+    @JoinColumn(name="Customer", referencedColumnName = "idcustomer")
     private Customer idcustomer;
     
     @ManyToOne
-    @JoinColumn(name="Breakdown", referencedColumnName = "id")
+    @JoinColumn(name="Breakdown", referencedColumnName = "idbreakdown")
     private Breakdown idbreakdown;
     
     private String requestchannel;

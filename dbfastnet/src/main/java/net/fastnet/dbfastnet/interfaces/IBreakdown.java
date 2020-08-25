@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import net.fastnet.dbfastnet.entities.Breakdown;
 
 @Repository
-public interface IBreakdown extends CrudRepository<Breakdown, Integer>{
+public interface IBreakdown extends CrudRepository<Breakdown, String>{
 
 }

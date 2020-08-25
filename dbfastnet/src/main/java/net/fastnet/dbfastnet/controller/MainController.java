@@ -108,14 +108,14 @@ public class MainController {
     }
     
     @GetMapping("/editcustomer/{id}")
-    public String editCustomer(@PathVariable int id, Model model) {
+    public String editCustomer(@PathVariable String id, Model model) {
     	Optional<Customer>customer = serviceCustomer.listId(id);
     	model.addAttribute("customer", customer);
     	return "formcustomer";
     }
     
     @GetMapping("/editbreakdown/{id}")
-    public String editBreakdown(@PathVariable int id, Model model) {
+    public String editBreakdown(@PathVariable String id, Model model) {
     	Optional<Breakdown>breakdown = serviceBreakdown.listId(id);
     	model.addAttribute("breakdown", breakdown);
     	return "formbreakdown";
@@ -129,13 +129,13 @@ public class MainController {
     }
     
     @GetMapping("/deletecustomer/{id}")
-    public String deleteCustomer(Model model, @PathVariable int id) {
+    public String deleteCustomer(Model model, @PathVariable String id) {
     	serviceCustomer.delete(id);
     	return "redirect:/listcustomer";
     }
     
     @GetMapping("/deletebreakdown/{id}")
-    public String deleteBreakdown(Model model, @PathVariable int id) {
+    public String deleteBreakdown(Model model, @PathVariable String id) {
     	serviceBreakdown.delete(id);
     	return "redirect:/listbreakdown";
     }
