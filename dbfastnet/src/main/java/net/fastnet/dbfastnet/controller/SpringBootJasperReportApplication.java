@@ -1,6 +1,8 @@
 package net.fastnet.dbfastnet.controller;
 
+import net.fastnet.dbfastnet.entities.Claim;
 import net.fastnet.dbfastnet.entities.Customer;
+import net.fastnet.dbfastnet.repository.ClaimRepository;
 import net.fastnet.dbfastnet.repository.CustomerRepository;
 import net.fastnet.dbfastnet.service.ReportService;
 import net.sf.jasperreports.engine.JRException;
@@ -20,8 +22,14 @@ public class SpringBootJasperReportApplication {
 
     @Autowired
     private CustomerRepository repository;
+    
+    @Autowired
+    private ClaimRepository repositoryClaim;
+    
     @Autowired
     private ReportService service;
+    
+    
 
     @GetMapping("/getCustomers")
     public List<Customer> getCustomers() {
@@ -32,5 +40,16 @@ public class SpringBootJasperReportApplication {
     @GetMapping("/report/{format}")
     public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
         return service.exportReport(format);
+    }
+    
+    @GetMapping("/getClaims")
+    public List<Claim> getClaims() {
+
+        return repositoryClaim.findAll();
+    }
+
+    @GetMapping("/reportclaim/{format}")
+    public String generateReportClaim(@PathVariable String format) throws FileNotFoundException, JRException {
+        return service.exportReportClaim(format);
     }
 }
