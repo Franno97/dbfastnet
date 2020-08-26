@@ -12,7 +12,6 @@ public class Breakdown {
 
 	
     @Id
-    @GeneratedValue
     private String idbreakdown;
     private String description;
     

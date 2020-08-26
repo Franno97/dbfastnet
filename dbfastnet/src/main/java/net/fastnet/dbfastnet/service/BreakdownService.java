@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.fastnet.dbfastnet.entities.Breakdown;
-import net.fastnet.dbfastnet.entities.Customer;
 import net.fastnet.dbfastnet.interfaceService.IBreakdownService;
 import net.fastnet.dbfastnet.interfaces.IBreakdown;
 

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.fastnet.dbfastnet.entities.Claim;
-import net.fastnet.dbfastnet.entities.Customer;
 import net.fastnet.dbfastnet.interfaceService.IClaimService;
 import net.fastnet.dbfastnet.interfaces.IClaim;
 
