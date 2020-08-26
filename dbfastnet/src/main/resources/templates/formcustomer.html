@@ -38,7 +38,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
           <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
           <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
@@ -82,7 +81,11 @@
             			</div>
             			<div class="form group">
             				<label class="textcolor">Tipo de conexion</label>
-            				<input th:field="*{connectiontype}" type="text" class="form-control botmargin-sm" required/>
+            				<select th:field="*{connectiontype}" name="connectiontype" required>
+                                              <option value="0"></option>
+                                              <option value="CONMUTADA">Conmutada</option>
+                                              <option value="NO CONMUTADA">No Conmutada</option>
+                            </select>
             			</div>
             			<div class="form group">
             				<input type="submit"  value="Guardar" class="btn btn-success">

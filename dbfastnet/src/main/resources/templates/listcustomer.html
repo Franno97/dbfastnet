@@ -36,7 +36,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
           <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
           <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar sesion</a>
@@ -66,7 +65,6 @@
         					</tr>
         				</thead>
         					<tr th:each="customer:${customers}">
-	        				<!--<td th:text="${customer.id}"></td>-->
 	        				<td th:text="${customer.idcustomer}"></td>
 	        				<td th:text="${customer.name}"></td>
 	        				<td th:text="${customer.phone}"></td>

@@ -38,7 +38,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" th:href="@{/listcustomer}">Administrar Clientes</a>
-          <a class="dropdown-item" th:href="@{/listbreakdown}">Administrar Averias</a>
           <a class="dropdown-item" th:href="@{/listclaim}">Administrar Reclamos</a>
           <div class="dropdown-divider"></div>
           <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Cerrar Sesion</a>
@@ -59,7 +58,7 @@
         					<tr>
 	    						<th>Id</th>
 	        					<th>Nombre Cliente</th>
-	        					<th>Id Averia</th>
+	        					<th>Tipo de Averia</th>
 	        					<th>Canal de Requerimiento</th>
 	        					<th>Fecha/Hora del reporte</th>
 	        					<th>Fecha/Hora de la reparacion</th>
@@ -70,7 +69,7 @@
         					<tr th:each="claim:${claims}">
 	        				<td th:text="${claim.id}"></td>
 	        				<td th:text="${claim.idcustomer.name}"></td>
-	        				<td th:text="${claim.idbreakdown.description}"></td>
+	        				<td th:text="${claim.idbreakdown}"></td>
 	        				<td th:text="${claim.requestchannel}"></td>
 	        				<td th:text="${claim.datetimereport}"></td>
 	        				<td th:text="${claim.datetimerepair}"></td>

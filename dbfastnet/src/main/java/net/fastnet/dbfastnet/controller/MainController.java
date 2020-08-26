@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.fastnet.dbfastnet.entities.Breakdown;
 import net.fastnet.dbfastnet.entities.Claim;
 import net.fastnet.dbfastnet.entities.Customer;
-import net.fastnet.dbfastnet.interfaceService.IBreakdownService;
 import net.fastnet.dbfastnet.interfaceService.IClaimService;
 import net.fastnet.dbfastnet.interfaceService.ICustomerService;
 
@@ -26,9 +24,6 @@ public class MainController {
 
 	@Autowired
 	private ICustomerService serviceCustomer;
-	
-	@Autowired
-	private IBreakdownService serviceBreakdown;
 	
 	@Autowired
 	private IClaimService serviceClaim;
@@ -56,13 +51,6 @@ public class MainController {
     	return "listcustomer";
     }
     
-    @GetMapping("/listbreakdown")
-    public String listBreakdown(Model model) {
-    	List<Breakdown>breakdowns = serviceBreakdown.list();
-    	model.addAttribute("breakdowns", breakdowns);
-    	return "listbreakdown";
-    }
-    
     @GetMapping("/listclaim")
     public String listClaim(Model model) {
     	List<Claim>claims = serviceClaim.list();
@@ -78,11 +66,6 @@ public class MainController {
     	return "formcustomer";
     }
     
-    @GetMapping("/newbreakdown")
-    public String addBreakdown(Model model) {
-    	model.addAttribute("breakdown", new Breakdown());
-    	return "formbreakdown";
-    }
     @GetMapping("/newclaim")
     public String addClaim(Model model) {
     	model.addAttribute("claim", new Claim());
@@ -93,12 +76,6 @@ public class MainController {
     public String saveCustomer(@Valid Customer c, Model model) {
     	serviceCustomer.save(c);
     	return "redirect:/listcustomer";
-    }
-    
-    @PostMapping("/savebreakdown")
-    public String saveBreakdown(@Valid Breakdown c, Model model) {
-    	serviceBreakdown.save(c);
-    	return "redirect:/listbreakdown";
     }
     
     @PostMapping("/saveclaim")
@@ -114,13 +91,6 @@ public class MainController {
     	return "formcustomer";
     }
     
-    @GetMapping("/editbreakdown/{id}")
-    public String editBreakdown(@PathVariable String id, Model model) {
-    	Optional<Breakdown>breakdown = serviceBreakdown.listId(id);
-    	model.addAttribute("breakdown", breakdown);
-    	return "formbreakdown";
-    }
-    
     @GetMapping("/editclaim/{id}")
     public String editClaim(@PathVariable int id, Model model) {
     	Optional<Claim>claim = serviceClaim.listId(id);
@@ -132,12 +102,6 @@ public class MainController {
     public String deleteCustomer(Model model, @PathVariable String id) {
     	serviceCustomer.delete(id);
     	return "redirect:/listcustomer";
-    }
-    
-    @GetMapping("/deletebreakdown/{id}")
-    public String deleteBreakdown(Model model, @PathVariable String id) {
-    	serviceBreakdown.delete(id);
-    	return "redirect:/listbreakdown";
     }
     
     @GetMapping("/deleteclaim/{id}")

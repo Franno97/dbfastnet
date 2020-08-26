@@ -24,10 +24,7 @@ public class Claim{
     @JoinColumn(name="Customer", referencedColumnName = "idcustomer")
     private Customer idcustomer;
     
-    @ManyToOne
-    @JoinColumn(name="Breakdown", referencedColumnName = "idbreakdown")
-    private Breakdown idbreakdown;
-    
+    private String idbreakdown;
     private String requestchannel;
     private String datetimereport;
     private String datetimerepair;
@@ -37,7 +34,7 @@ public class Claim{
 	public Claim() {
 	}
 
-	public Claim(Customer idcustomer, Breakdown idbreakdown, String requestchannel,
+	public Claim(Customer idcustomer, String idbreakdown, String requestchannel,
 			String datetimereport, String datetimerepair, String repairtime, String solutiondesc) {
 		this.idcustomer = idcustomer;
 		this.idbreakdown = idbreakdown;
@@ -64,11 +61,11 @@ public class Claim{
 		this.idcustomer = idcustomer;
 	}
 
-	public Breakdown getIdbreakdown() {
+	public String getIdbreakdown() {
 		return idbreakdown;
 	}
 
-	public void setIdbreakdown(Breakdown idbreakdown) {
+	public void setIdbreakdown(String idbreakdown) {
 		this.idbreakdown = idbreakdown;
 	}
 
