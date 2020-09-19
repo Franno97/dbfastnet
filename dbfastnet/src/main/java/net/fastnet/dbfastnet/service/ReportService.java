@@ -7,12 +7,13 @@ import net.fastnet.dbfastnet.repository.ClaimRepository;
 import net.fastnet.dbfastnet.repository.CustomerRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.design.JasperDesign;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,12 +47,16 @@ public class ReportService {
         if (reportFormat.equalsIgnoreCase("pdf")) {
             JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\customers.pdf");
         }
-
+        
+        
+        
         return "report generated in path : " + path;
     }
     
+    
+    
     public String exportReportClaim(String reportFormat) throws FileNotFoundException, JRException {
-        String path = "C:\\Users\\SYSTEMarket\\Desktop";
+    	String path = "C:\\Users\\SYSTEMarket\\Desktop";
         List<Claim>claims = repositoryClaim.findAll();
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:claims.jrxml");
@@ -61,14 +66,17 @@ public class ReportService {
         parameters.put("createdBy", "Data Trouble");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         
+        
+        
         if (reportFormat.equalsIgnoreCase("html")) {
             JasperExportManager.exportReportToHtmlFile(jasperPrint, "C:\\Users\\SYSTEMarket\\git\\dbfastnet\\dbfastnet\\src\\main\\resources\\claims.html");
+        
         }
         
         if (reportFormat.equalsIgnoreCase("pdf")) {
             JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\claims.pdf");
         }
-
-        return "report generated in path : " + path;
+        
+        return "report generated in path: " + path;
     }
 }

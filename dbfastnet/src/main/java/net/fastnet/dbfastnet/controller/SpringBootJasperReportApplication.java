@@ -47,6 +47,7 @@ public class SpringBootJasperReportApplication {
 
         return repositoryClaim.findAll();
     }
+    
 
     @GetMapping("/reportclaim/{format}")
     public String generateReportClaim(@PathVariable String format) throws FileNotFoundException, JRException {

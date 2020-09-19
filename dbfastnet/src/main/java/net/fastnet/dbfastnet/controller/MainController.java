@@ -1,11 +1,15 @@
 package net.fastnet.dbfastnet.controller;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +21,7 @@ import net.fastnet.dbfastnet.entities.Claim;
 import net.fastnet.dbfastnet.entities.Customer;
 import net.fastnet.dbfastnet.interfaceService.IClaimService;
 import net.fastnet.dbfastnet.interfaceService.ICustomerService;
+import net.fastnet.dbfastnet.service.ClaimService;
 
 @Controller
 @RequestMapping  
@@ -108,5 +113,15 @@ public class MainController {
     public String deleteClaim(Model model, @PathVariable int id) {
     	serviceClaim.delete(id);
     	return "redirect:/listclaim";
+    }
+    
+    @GetMapping("/export/all")
+    public ResponseEntity<InputStreamResource> exportAllData() throws Exception{
+    	ByteArrayInputStream stream = serviceClaim.exportAllData();
+    	
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("Content-Disposition", "attachment; filename=reclamos.xls");
+    	
+    	return ResponseEntity.ok().headers(headers).body(new InputStreamResource(stream));
     }
 }

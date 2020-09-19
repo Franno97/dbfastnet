@@ -1,5 +1,6 @@
 package net.fastnet.dbfastnet.interfaceService;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,4 +11,7 @@ public interface IClaimService {
 	public Optional<Claim>listId(int id);
 	public int save(Claim c);
 	public void delete(int id);
+	ByteArrayInputStream exportAllData() throws Exception;
+	List<Claim> getAll();
+	
 }
